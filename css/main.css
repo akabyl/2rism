@@ -1,0 +1,536 @@
+/* Сброс стилей */
+@import './reset.css';
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,700&display=swap');
+/* Кнопки */
+@import './buttons.css';
+@import './keyframes.css';
+@import './nav-icon.css';
+@import './mobile-nav.css';
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #161414;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.none {
+  display: none;
+}
+
+.header {
+  padding: 31px 0 100px;
+  height: 800px;
+  color: #fff;
+  background-color: #000;
+  background-image: url('./../img/banner.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 0px 0px 54px 54px;
+}
+
+.container--column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 54px;
+}
+
+.nav-list__link {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: capitalize;
+  opacity: 0.7;
+}
+
+.nav-list__link--active {
+  font-weight: 400;
+  opacity: 1;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  column-gap: 8px; 
+}
+
+.user__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.user__greeting {
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.user__name {
+  font-weight: 600;
+}
+
+.user__avatar {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.user__avatar::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff0000;
+  border-radius: 50%;
+}
+
+.user__img {
+  border-radius: 50%;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 32px;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.3;
+  /* margin-bottom: 32px; */
+}
+
+/*  FORM */
+
+.form {
+  display: flex;
+  align-items: center;
+  width: 1140px;
+  height: 88px;
+  padding: 8px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.form__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px 16px 56px;
+  background-repeat: no-repeat;
+  background-position: 16px 22px;
+  width: 255px;
+}
+
+.form__input--location {
+  width: 300px;
+  background-image: url('./../img/icons/location-yellow.svg');
+}
+
+.form__input--activity {
+  background-image: url('./../img/icons/riding.svg');
+}
+
+.form__input--data {
+  background-image: url('./../img/icons/calendar.svg');
+}
+
+.form__input--guests {
+  background-image: url('./../img/icons/group.svg');
+}
+
+.form__label {
+  color: #5B5B5B;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.form__select {
+  position: relative;
+  /* color: #161414; */
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  appearance: none; 
+}
+
+.form__input {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px;
+}
+
+.form__input::placeholder {
+  color: #161414;
+}
+
+/* Main */
+
+.title-1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.main {
+  padding: 120px 0;
+  display: grid;
+  gap: 120px;
+}
+
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.section__cards {
+  display: grid;
+  gap: 32px;
+}
+
+.section__cards--popular {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.cards-column {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.cards-column-2-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* CARD */
+
+.card {
+  position: relative;
+  /* transition: opacity 3s ease-in-out; */
+;}
+
+.card--wide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.card--popular:hover, 
+.card--hotel:hover {
+  animation: opacity 1s ease-in-out;
+}
+
+.card:hover .card__location {
+  color: #6344ff;
+}
+
+.card:hover .card__title--activities {
+  color: #6344ff;
+}
+
+.card__link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card__img {
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.card__img--hotels {
+  margin-bottom: 10px;
+}
+
+.card__img--margin-none {
+  margin: 0;
+}
+
+.card--popular:hover .card__title {
+  animation: slide 0.9s ease-in-out;
+  color: #e43c3c;
+}
+
+.card__title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card__title--hotels {
+  margin-bottom: 12px;
+}
+
+.card__title--activities {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__location {
+  color: #979797;
+  font-size: 13px;
+  font-weight: 400;
+  position: relative;
+  z-index: 5;
+  display: block;
+  transition: color 0.4s ease-in-out;
+}
+
+.card__location--icon {
+  padding-left: 20px;
+  background-image: url('./../img/icons/location.svg');
+  background-repeat: no-repeat;
+  background-position: left 1px;
+}
+
+.card__rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Travel */
+
+.card__descr {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card__title--big {
+  font-weight: 600; 
+  font-size: 20px;
+  color: #161414;
+}
+
+.card__text {
+  font-size: 16px;
+  line-height: 32px;
+  color: #5B5B5B;
+}
+
+.card__footer--wide {
+  margin-top: auto;
+}
+.card__footer-link {
+  position: relative;
+  z-index: 2;
+  font-size: 12px;
+  color: #878787;
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: 0 1px;
+}
+
+.card__footer-link:hover {
+  color: #7b61ff;
+}
+
+.card__footer-link--date {
+  background-image: url('./../img/icons/calendar-2.svg');
+}
+
+.card__footer--author {
+  background-image: url('./../img/icons/user.svg');
+}
+
+.card__footer-link--comments {
+  background-image: url('./../img/icons/chat.svg');
+}
+
+/* About Us */
+
+.about-us {
+  max-width: 1144px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+}
+
+.about-us__descr {
+  display: grid;
+  align-content: center;
+  /* flex-direction: column; */
+  gap: 32px;
+}
+
+.about-us__title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.about-us__text {
+  color: #5B5B5B;
+  line-height: 32px;
+}
+
+.about-us__btn {
+  justify-self: flex-start;
+}
+
+.about-us__img {
+  border-radius: 24px;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #f9f9f9;
+  padding: 120px 0;
+}
+
+.footer__row {
+  display: grid;
+  gap: 64px;
+  grid-template-columns: repeat(3, auto);
+}
+
+.footer__copyright {
+  display: grid;
+  gap: 16px;
+  max-width: 354px;
+}
+
+.footer__copyright-text {
+  font-size: 13px;
+  color: #5b5b5b;
+  margin-bottom: 16px;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer__nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  align-items: center;
+  max-width: 505px;
+}
+
+.footer__nav-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.footer__nav-list {
+  display: grid;
+  gap: 12px;
+}
+
+.footer__nav-link {
+  font-size: 13px;
+  color: #5b5b5b;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer__nav-link:hover {
+  color: #7b61ff;
+}
+
+.footer__subscribe {
+  max-width: 388px;
+}
+
+.subscribe {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+}
+
+.footer__subscribe-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.subscribe__input-wrapper {
+  position: relative;
+
+}
+
+.subscribe__input {
+  padding: 32px 20px 16px 56px;
+  width: 300px;
+  height: 72px;
+  background-color: #fff;
+  border-radius: 12px;
+  background-image: url('./../img/icons/mail.svg');
+  background-repeat: no-repeat;
+  background-position: 15px 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.subscribe__label {
+  position: absolute;
+  top: 26px;
+  left: 56px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #5b5b5b;
+  transition: top 0.2s ease-in;
+  pointer-events: none;
+}
+
+.subscribe__input:focus ~ .subscribe__label, 
+.subscribe__input:valid ~ .subscribe__label {
+  top: 10px;
+}
+
+.subscribe__label--top {
+  top: 16px;
+}
